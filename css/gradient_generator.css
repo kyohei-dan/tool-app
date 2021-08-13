@@ -7,9 +7,11 @@
 	border: none;
 	outline: none;
 }
+
 body {
 	height: 100vh;
 }
+
 .container {
 	background-color: #ffffff;
 	width: 400px;
@@ -21,14 +23,13 @@ body {
 	border-radius: 10px;
 	box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
 }
-.container *:not(i) {
-	font-family: "Rubik", sans-serif;
-}
+
 .colors {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 }
+
 input[type="color"] {
 	-webkit-appearance: none;
 	background-color: transparent;
@@ -36,16 +37,19 @@ input[type="color"] {
 	height: 45px;
 	cursor: pointer;
 }
+
 input[type="color"]::-webkit-color-swatch {
 	border-radius: 20px;
 	border: none;
 }
+
 .buttons {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	margin: 30px 0;
 }
+
 .buttons button {
 	height: 35px;
 	width: 35px;
@@ -55,14 +59,17 @@ input[type="color"]::-webkit-color-swatch {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
 .rotate-icon i {
 	transform: rotate(45deg);
 }
+
 .buttons .active {
 	border: none;
 	background-color: #4a6ee0;
 	color: #ffffff;
 }
+
 #submit {
 	display: block;
 	background-color: #4a6ee0;
@@ -73,9 +80,11 @@ input[type="color"]::-webkit-color-swatch {
 	margin: 0 auto 30px auto;
 	cursor: pointer;
 }
+
 .output {
 	background-color: #f0f2fc;
 }
+
 #code {
 	width: 100%;
 	resize: none;
@@ -83,6 +92,7 @@ input[type="color"]::-webkit-color-swatch {
 	padding: 10px 20px;
 	background-color: transparent;
 }
+
 #copy {
 	font-size: 14px;
 	background-color: #4a6ee0;
