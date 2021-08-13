@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="/images/logo-mb.png" type="image/png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
 		<title>Gradient Generator</title>
 		<!--Font Awesome-->
 		<link
@@ -14,52 +27,187 @@
 		/>
 		<!--Stylesheet-->
 		<link rel="stylesheet" href="./css/gradient_generator.css" />
+		<link rel="stylesheet" href="./css/grid.css" />
+		<link rel="stylesheet" href="./css/app.css" />
+		<script src="./js/app.js" defer></script>
+		<script src="./js/gradient_generator.js" defer></script>
 	</head>
+
 	<body>
-		<div class="container">
-			<div class="colors">
-				<input type="color" id="color-a" value="#1488cc" />
-				<input type="color" id="color-b" value="#2b32b2" />
+		<div class="sidebar">
+			<div class="sidebar-logo">
+				<div class="sidebar-close" id="sidebar-close">
+					<i class="bx bx-left-arrow-alt"></i>
+				</div>
 			</div>
-			<div class="buttons">
-				<button onclick="setDirection('to top',this)">
-					<i class="fas fa-arrow-up"></i>
-				</button>
-				<button class="active" onclick="setDirection('to bottom',this)">
-					<i class="fas fa-arrow-down"></i>
-				</button>
-				<button onclick="setDirection('to right',this)">
-					<i class="fas fa-arrow-right"></i>
-				</button>
-				<button onclick="setDirection('to left',this)">
-					<i class="fas fa-arrow-left"></i>
-				</button>
-				<button class="rotate-icon" onclick="setDirection('to top right',this)">
-					<i class="fas fa-arrow-up"></i>
-				</button>
-				<button
-					class="rotate-icon"
-					onclick="setDirection('to bottom left',this)"
-				>
-					<i class="fas fa-arrow-down"></i>
-				</button>
-				<button
-					class="rotate-icon"
-					onclick="setDirection('to bottom right',this)"
-				>
-					<i class="fas fa-arrow-right"></i>
-				</button>
-				<button class="rotate-icon" onclick="setDirection('to top left',this)">
-					<i class="fas fa-arrow-left"></i>
-				</button>
+			<ul class="sidebar-menu">
+				<li>
+					<a href="/">
+						<i class="bx bx-home"></i>
+						<span>dashboard</span>
+					</a>
+				</li>
+				<li>
+					<a href="./gradient_generator.html" class="active">
+						<i class="bx bx-shopping-bag"></i>
+						<span>gradient_generator</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="bx bx-chart"></i>
+						<span>analytic</span>
+					</a>
+				</li>
+				<li class="sidebar-submenu">
+					<a href="#" class="sidebar-menu-dropdown">
+						<i class="bx bx-user-circle"></i>
+						<span>account</span>
+						<div class="dropdown-icon"></div>
+					</a>
+					<ul class="sidebar-menu sidebar-menu-dropdown-content">
+						<li>
+							<a href="#"> edit profile </a>
+						</li>
+						<li>
+							<a href="#"> account settings </a>
+						</li>
+						<li>
+							<a href="#"> billing </a>
+						</li>
+					</ul>
+				</li>
+				<li class="sidebar-submenu">
+					<a href="#" class="sidebar-menu-dropdown">
+						<i class="bx bx-category"></i>
+						<span>project</span>
+						<div class="dropdown-icon"></div>
+					</a>
+					<ul class="sidebar-menu sidebar-menu-dropdown-content">
+						<li>
+							<a href="#"> list </a>
+						</li>
+						<li>
+							<a href="#"> add project </a>
+						</li>
+					</ul>
+				</li>
+				<li class="sidebar-submenu">
+					<a href="#" class="sidebar-menu-dropdown">
+						<i class="bx bx-category"></i>
+						<span>e-commerce</span>
+						<div class="dropdown-icon"></div>
+					</a>
+					<ul class="sidebar-menu sidebar-menu-dropdown-content">
+						<li>
+							<a href="#"> list product </a>
+						</li>
+						<li>
+							<a href="#"> add product </a>
+						</li>
+						<li>
+							<a href="#"> orders </a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="bx bx-mail-send"></i>
+						<span>mail</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="bx bx-chat"></i>
+						<span>chat</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="bx bx-calendar"></i>
+						<span>calendar</span>
+					</a>
+				</li>
+				<li class="sidebar-submenu">
+					<a href="#" class="sidebar-menu-dropdown">
+						<i class="bx bx-cog"></i>
+						<span>settings</span>
+						<div class="dropdown-icon"></div>
+					</a>
+					<ul class="sidebar-menu sidebar-menu-dropdown-content">
+						<li>
+							<a href="#" class="darkmode-toggle" id="darkmode-toggle">
+								darkmode
+								<span class="darkmode-switch"></span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+		<!-- END SIDEBAR -->
+
+		<div class="main">
+			<div class="main-header">
+				<div class="mobile-toggle" id="mobile-toggle">
+					<i class="bx bx-menu-alt-right"></i>
+				</div>
+				<div class="main-title">gradient_generator</div>
 			</div>
-			<button id="submit" onclick="generateCode()">Generate</button>
-			<div class="output">
-				<textarea id="code" rows="2"></textarea>
-				<button id="copy" onclick="copyText()">Copy</button>
+			<div class="main-content">
+				<div class="container">
+					<div class="colors">
+						<input type="color" id="color-a" value="#1488cc" />
+						<input type="color" id="color-b" value="#2b32b2" />
+					</div>
+					<div class="buttons">
+						<button onclick="setDirection('to top',this)">
+							<i class="fas fa-arrow-up"></i>
+						</button>
+						<button class="active" onclick="setDirection('to bottom',this)">
+							<i class="fas fa-arrow-down"></i>
+						</button>
+						<button onclick="setDirection('to right',this)">
+							<i class="fas fa-arrow-right"></i>
+						</button>
+						<button onclick="setDirection('to left',this)">
+							<i class="fas fa-arrow-left"></i>
+						</button>
+						<button
+							class="rotate-icon"
+							onclick="setDirection('to top right',this)"
+						>
+							<i class="fas fa-arrow-up"></i>
+						</button>
+						<button
+							class="rotate-icon"
+							onclick="setDirection('to bottom left',this)"
+						>
+							<i class="fas fa-arrow-down"></i>
+						</button>
+						<button
+							class="rotate-icon"
+							onclick="setDirection('to bottom right',this)"
+						>
+							<i class="fas fa-arrow-right"></i>
+						</button>
+						<button
+							class="rotate-icon"
+							onclick="setDirection('to top left',this)"
+						>
+							<i class="fas fa-arrow-left"></i>
+						</button>
+					</div>
+					<button id="submit" onclick="generateCode()">コードを生成する</button>
+					<div class="output">
+						<textarea id="code" rows="2"></textarea>
+						<button id="copy" onclick="copyText()">Copy</button>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!--Script-->
-		<script src="./js/gradient_generator.js"></script>
+		<!-- END MAIN CONTENT -->
+		<div class="overlay"></div>
 	</body>
 </html>
