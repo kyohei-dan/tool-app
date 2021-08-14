@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Tool-App</title>
+		<title>color_changer</title>
 		<link rel="shortcut icon" href="/images/logo-mb.png" type="image/png" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
@@ -15,9 +15,10 @@
 			href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./css/grid.css" />
+		<link rel="stylesheet" href="./css/color_changer.css" />
 		<link rel="stylesheet" href="./css/app.css" />
 		<script src="./js/app.js" defer></script>
+		<script src="./js/color_changer.js" defer></script>
 	</head>
 
 	<body>
@@ -29,7 +30,7 @@
 			</div>
 			<ul class="sidebar-menu">
 				<li>
-					<a href="/" class="active">
+					<a href="/">
 						<i class="bx bx-home"></i>
 						<span>dashboard</span>
 					</a>
@@ -47,7 +48,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="./color_changer.html">
+					<a href="./color_changer.html" class="active">
 						<i class="bx bx-user-circle"></i>
 						<span>color_changer</span>
 					</a>
@@ -128,58 +129,13 @@
 				<div class="mobile-toggle" id="mobile-toggle">
 					<i class="bx bx-menu-alt-right"></i>
 				</div>
-				<div class="main-title">dashboard</div>
+				<div class="main-title">color_changer</div>
 			</div>
 			<div class="main-content">
-				<div class="row">
-					<div class="col-3 col-md-6 col-sm-12">
-						<div class="box box-hover">
-							<div class="counter">
-								<div class="counter-title">total order</div>
-								<div class="counter-info">
-									<div class="counter-count">6578</div>
-									<i class="bx bx-shopping-bag"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-3 col-md-6 col-sm-12">
-						<div class="box box-hover">
-							<div class="counter">
-								<div class="counter-title">conversion rate</div>
-								<div class="counter-info">
-									<div class="counter-count">30.5%</div>
-									<i class="bx bx-chat"></i>
-								</div>
-							</div>
-							<!-- END COUNTER -->
-						</div>
-					</div>
-					<div class="col-3 col-md-6 col-sm-12">
-						<div class="box box-hover">
-							<div class="counter">
-								<div class="counter-title">total profit</div>
-								<div class="counter-info">
-									<div class="counter-count">$9,780</div>
-									<i class="bx bx-line-chart"></i>
-								</div>
-							</div>
-							<!-- END COUNTER -->
-						</div>
-					</div>
-					<div class="col-3 col-md-6 col-sm-12">
-						<div class="box box-hover">
-							<div class="counter">
-								<div class="counter-title">daily visitors</div>
-								<div class="counter-info">
-									<div class="counter-count">690</div>
-									<i class="bx bx-user"></i>
-								</div>
-							</div>
-							<!-- END COUNTER -->
-						</div>
-					</div>
-				</div>
+				<section>
+					<button id="submit">Change BG Color</button>
+					<h2>#FFFFFF</h2>
+				</section>
 			</div>
 		</div>
 		<!-- END MAIN CONTENT -->
