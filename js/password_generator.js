@@ -55,33 +55,23 @@ const resultEl = document.getElementById("result");
 
 const lengthEl = document.getElementById("slider");
 
-// Checkboxes representing the options that is responsible to create differnt type of password based on user
 const uppercaseEl = document.getElementById("uppercase");
 const lowercaseEl = document.getElementById("lowercase");
 const numberEl = document.getElementById("number");
 const symbolEl = document.getElementById("symbol");
 
-// Button to generate the password
 const generateBtn = document.getElementById("generate");
-// Button to copy the text
 const copyBtn = document.getElementById("copy-btn");
-// Result viewbox container
 const resultContainer = document.querySelector(".result");
-// Text info showed after generate button is clicked
 const copyInfo = document.querySelector(".result__info.right");
-// Text appear after copy button is clicked
 const copiedInfo = document.querySelector(".result__info.left");
 
-// if this variable is trye only then the copyBtn will appear, i.e. when the user first click generate the copyBth will interact.
 let generatedPassword = false;
 
-// Update Css Props of the COPY button
-// Getting the bounds of the result viewbox container
 let resultContainerBound = {
 	left: resultContainer.getBoundingClientRect().left,
 	top: resultContainer.getBoundingClientRect().top,
 };
-// This will update the position of the copy button based on mouse Position
 resultContainer.addEventListener("mousemove", (e) => {
 	resultContainerBound = {
 		left: resultContainer.getBoundingClientRect().left,
@@ -104,7 +94,6 @@ window.addEventListener("resize", (e) => {
 	};
 });
 
-// Copy Password in clipboard
 copyBtn.addEventListener("click", () => {
 	const textarea = document.createElement("textarea");
 	const password = resultEl.innerText;
@@ -123,7 +112,6 @@ copyBtn.addEventListener("click", () => {
 	copiedInfo.style.opacity = "0.75";
 });
 
-// When Generate is clicked Password id generated.
 generateBtn.addEventListener("click", () => {
 	const length = +lengthEl.value;
 	const hasLower = lowercaseEl.checked;
@@ -144,7 +132,6 @@ generateBtn.addEventListener("click", () => {
 	copiedInfo.style.opacity = "0";
 });
 
-// Function responsible to generate password and then returning it.
 function generatePassword(length, lower, upper, number, symbol) {
 	let generatedPassword = "";
 	const typesCount = lower + upper + number + symbol;
@@ -163,7 +150,6 @@ function generatePassword(length, lower, upper, number, symbol) {
 	return generatedPassword.slice(0, length);
 }
 
-// function that handles the checkboxes state, so at least one needs to be selected. The last checkbox will be disabled.
 function disableOnlyCheckbox() {
 	let totalChecked = [uppercaseEl, lowercaseEl, numberEl, symbolEl].filter(
 		(el) => el.checked

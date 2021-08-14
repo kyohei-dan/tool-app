@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>color_changer</title>
+		<title>Box_Shadow_Generator</title>
 		<link rel="shortcut icon" href="/images/logo-mb.png" type="image/png" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
@@ -15,10 +15,10 @@
 			href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./css/color_changer.css" />
+		<link rel="stylesheet" href="./css/box_shadow_generator.css" />
 		<link rel="stylesheet" href="./css/app.css" />
 		<script src="./js/app.js" defer></script>
-		<script src="./js/color_changer.js" defer></script>
+		<script src="./js/box_shadow_generator.js" defer></script>
 	</head>
 
 	<body>
@@ -48,7 +48,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="./color_changer.html" class="active">
+					<a href="./color_changer.html">
 						<i class="bx bx-user-circle"></i>
 						<span>color_changer</span>
 					</a>
@@ -60,7 +60,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="./box_shadow_generator.html">
+					<a href="./box_shadow_generator.html" class="active">
 						<i class="bx bx-chat"></i>
 						<span>box_shadow_generator</span>
 					</a>
@@ -129,16 +129,85 @@
 				<div class="mobile-toggle" id="mobile-toggle">
 					<i class="bx bx-menu-alt-right"></i>
 				</div>
-				<div class="main-title">color_changer</div>
+				<div class="main-title">Box_shadow_generator</div>
 			</div>
 			<div class="main-content">
-				<section>
-					<button id="submit">Change BG Color</button>
-					<h2>#FFFFFF</h2>
-				</section>
+				<div class="container">
+					<div class="box-container">
+						<div id="output">
+							<div id="box"></div>
+						</div>
+					</div>
+					<div class="settings">
+						<div class="input-block">
+							<label for="h-offset">h-offset（x軸）</label>
+							<input type="range" name="h-offset" id="h-offset" value="10" />
+						</div>
+						<div class="input-block">
+							<label for="v-offset">v-offset（y軸）</label>
+							<input type="range" name="v-offset" id="v-offset" value="10" />
+						</div>
+						<div class="input-block">
+							<label for="blur-radius">blur（ぼかし量）</label>
+							<input
+								type="range"
+								min="0"
+								name="blur-radius"
+								id="blur-radius"
+								value="7"
+							/>
+						</div>
+						<div class="input-block">
+							<label for="spread-radius">spread（広がり量）</label>
+							<input
+								type="range"
+								name="spread-radius"
+								id="spread-radius"
+								value="0"
+							/>
+						</div>
+						<div class="input-block">
+							<label for="color">color（影の色）</label>
+							<input type="color" name="color" id="color" value="#000000" />
+						</div>
+						<div class="input-block">
+							<label for="opacity">opacity（透明度）</label>
+							<input
+								type="range"
+								min="0"
+								max="1"
+								step="0.01"
+								name="opacity"
+								id="opacity"
+								value="0.25"
+							/>
+						</div>
+						<div class="input-block">
+							<label for="inset">inset（内側に影をつける）</label>
+							<input type="checkbox" name="inset" id="inset" />
+						</div>
+						<div class="generated-css-container">
+							<div id="generated-css">
+								box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- END MAIN CONTENT -->
 		<div class="overlay"></div>
 	</body>
+	<script>
+		// Create the "Copy to Clipboard" button only if "navigator.clipboard" is supported by the browser
+		if (navigator.clipboard) {
+			const generatedCssContainer = document.querySelector(
+				".generated-css-container"
+			);
+			const generatedCssCopyBtn = document.createElement("button");
+			generatedCssCopyBtn.id = "generated-css-copy-btn";
+			generatedCssCopyBtn.textContent = "Copy";
+			generatedCssContainer.appendChild(generatedCssCopyBtn);
+		}
+	</script>
 </html>
