@@ -33,7 +33,7 @@ body {
 a {
 	text-decoration: none;
 	color: unset;
-	display: inline-block;
+	display: block;
 }
 
 .sidebar {
@@ -211,6 +211,71 @@ a {
 
 .counter-info i {
 	color: var(--main-color);
+}
+
+table {
+	width: 100%;
+	min-width: 1000px;
+}
+
+.order-owner {
+	display: flex;
+	align-items: center;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+
+.order-owner svg {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+table thead tr {
+	text-align: left;
+}
+
+table th,
+table td {
+	padding: 20px 0;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.order-status {
+	padding: 5px 15px;
+	border-radius: 5px;
+	font-weight: 500;
+}
+
+.order-ready {
+	color: #2a59d1;
+	background-color: rgba(62, 121, 247, 0.1);
+}
+
+.order-shipped {
+	color: #00ab6f;
+	background-color: rgba(4, 209, 130, 0.1);
+}
+
+.payment-status {
+	display: flex;
+	align-items: center;
+}
+
+.payment-status .dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.payment-paid .dot {
+	background-color: #04d182;
+}
+
+.payment-pending .dot {
+	background-color: #ffc542;
 }
 
 .overflow-scroll {
