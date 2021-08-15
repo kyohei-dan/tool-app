@@ -118,7 +118,7 @@
 		margin: 1.75rem 0;
 	}
 	.generated-css-container {
-		width: 60%;
+		width: 100%;
 	}
 	#box {
 		width: 200px;
@@ -128,7 +128,7 @@
 }
 @media (max-width: 1199px) {
 	.generated-css-container {
-		width: 75%;
+		width: 100%;
 	}
 }
 @media (max-width: 959px) {

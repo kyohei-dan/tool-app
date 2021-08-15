@@ -38,8 +38,6 @@ function updateBoxShadow(event) {
 	generatedCss.textContent = `box-shadow: ${boxShadow};`;
 }
 
-// Copy to Clipboard (using the Clipboard API which is available on the navigator.clipboard object)
-
 if (navigator.clipboard) {
 	const generatedCssCopyBtn = document.querySelector("#generated-css-copy-btn");
 
@@ -49,7 +47,6 @@ if (navigator.clipboard) {
 		generatedCssCopyBtn.disabled = true;
 		navigator.clipboard.writeText(generatedCss.textContent).then(
 			function () {
-				/* clipboard successfully set */
 				generatedCssCopyBtn.textContent = "Copied!";
 				generatedCssCopyBtn.classList.add("success");
 				setTimeout(() => {
@@ -59,7 +56,6 @@ if (navigator.clipboard) {
 				}, 1000);
 			},
 			function (err) {
-				/* clipboard write failed */
 				generatedCssCopyBtn.textContent = "Error";
 				generatedCssCopyBtn.classList.add("error");
 				console.error(`Failed to copy to clipboard! ${err}`);
